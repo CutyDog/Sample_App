@@ -1,7 +1,7 @@
-# README
+# Sampleアプリケーション
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://sample-app-ta14.herokuapp.com/
+https://git.heroku.com/sample-app-ta14.git
 
 Things you may want to cover:
 
