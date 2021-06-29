@@ -30,4 +30,4 @@
 
 /s3bucket
 
-/config/initializers/carrierwave.rb
+/config/initializers/carrier_wave.rb
