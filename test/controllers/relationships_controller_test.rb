@@ -15,4 +15,6 @@ class RelationshipsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to login_url
   end
+  
+  
 end
