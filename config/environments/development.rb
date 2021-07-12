@@ -49,6 +49,8 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :test
   host = 'https://20734b6360ff45ffb872b2c3f0001b97.vfs.cloud9.ap-northeast-1.console.aws.amazon.com' 
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+  
+  #config.hosts << "20734b6360ff45ffb872b2c3f0001b97.vfs.cloud9.ap-northeast-1.amazonaws.com"
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
