@@ -1,8 +1,11 @@
 require 'test_helper'
+require 'cgi'
 
 class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)
+    @second_user = users(:archer)
+    @third_user = users(:lana)
   end
   
   test "micropost interface" do
@@ -50,5 +53,25 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     other_user.microposts.create!(content: "A micropost")
     get root_path
     assert_match "1 micropost", response.body
+  end  
+  
+  test "reply interface" do
+    log_in_as(@user)
+    content = "@Lana Kane, This is Reply Message."
+    post  microposts_path, params: { micropost: { content: content }}
+    follow_redirect!
+    assert_match "@Lana Kane,", response.body
+    
+    log_out(@user)
+    log_in_as(@second_user)
+    get root_path
+    assert_equal @second_user.feed.where(user_id: @user).count, @user.microposts.count-1
+    
+    log_out(@second_user)
+    log_in_as(@third_user)
+    follow_redirect!
+    @user.microposts.each do |post_following|
+      assert @third_user.feed.include?(post_following)
+    end
   end  
 end
