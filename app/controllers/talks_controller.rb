@@ -16,7 +16,7 @@ class TalksController < ApplicationController
   end
   
   def messages
-    @message = Message.new(:message_params)
+    @message = Message.new(message_params)
     #トークの更新日時を更新
     @talk.touch
     if @message.save
@@ -41,4 +41,10 @@ class TalksController < ApplicationController
       @talk = current_user.talks.find_by(id: params[:id])
       redirect_to root_url if @talk.nil?
     end  
+    
+    def correct_user
+      @message = current_user.messages.find_by(id: params[:id])
+      redirect_to root_url if @message.nil?
+    end
+
 end

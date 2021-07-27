@@ -20,11 +20,11 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
-  resources :talk, only: [:show, :create] do
+  resources :talks,               only: [:show, :create] do
     member do
       post :memberships, :messages
     end
   end 
-  resources :memberships, only: :destroy
-  resources :messages, only: :destroy
+  resources :memberships,         only: :destroy
+  resources :messages,            only: :destroy
 end
