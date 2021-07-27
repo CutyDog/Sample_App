@@ -2,7 +2,7 @@
   <%= message = talk.latest_message %>
   <%= membership = talk.memberships.find_by(user: current_user) %>
   <%= gravatar_for(message.nil? ? talk.memberships.first.user : message.user, size: 50) %>
-  <%= link_to 'Leave', membership_path(current_user),
+  <%= link_to 'Leave', membership_path(membership),
                        class: 'delete',
                        method: :delete,
                        data: { confirm: "You sure?" } %>
