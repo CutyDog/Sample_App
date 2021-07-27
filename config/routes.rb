@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'messages/index'
+  get 'messages/create'
   root 'static_pages#home'  
   get '/help', to: 'static_pages#help'
   get '/about', to: 'static_pages#about'
@@ -18,4 +20,11 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
+  resources :talk, only: [:show, :create] do
+    member do
+      post :memberships, :messages
+    end
+  end 
+  resources :memberships, only: :destroy
+  resources :messages, only: :destroy
 end

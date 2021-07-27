@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_14_034928) do
+ActiveRecord::Schema.define(version: 2021_07_27_091638) do
+
+  create_table "memberships", force: :cascade do |t|
+    t.integer "talk_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["talk_id"], name: "index_memberships_on_talk_id"
+    t.index ["user_id", "talk_id"], name: "index_memberships_on_user_id_and_talk_id", unique: true
+    t.index ["user_id"], name: "index_memberships_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "talk_id"
+    t.integer "user_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["talk_id"], name: "index_messages_on_talk_id"
+    t.index ["updated_at", "talk_id"], name: "index_messages_on_updated_at_and_talk_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -31,6 +52,12 @@ ActiveRecord::Schema.define(version: 2021_07_14_034928) do
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
+  create_table "talks", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["updated_at"], name: "index_talks_on_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
