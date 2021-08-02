@@ -7,6 +7,12 @@
         <%= @user.name %>
       </h1>
     </section>
+    <section class="talk" >
+      <%= form_for Talk.new do |f| %>
+        <%= hidden_field_tag :member_id, @user.id %>
+        <%= f.submit "Message", class: "btn btn-primary" %>
+      <% end %>
+    </section>
     <section class="status">
       <%= render 'shared/status' %>
     </section>

@@ -5,14 +5,17 @@ class TalksController < ApplicationController
   def show
     @messages = @talk.messages
     @message = Message.new
-  end
+  end 
   
   def create
+    
     @talk = Talk.new
     @talk.memberships.build(user_id: current_user.id)
     @talk.memberships.build(user_id: params[:member_id])
     @talk.save
-    redirect_to @talk
+    if @talk.save
+      redirect_to talk_path(@talk)
+    end  
   end
   
   def messages
