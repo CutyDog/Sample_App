@@ -1,0 +1,20 @@
+<% title = @talk.title(current_user, 50) %>
+<% provide(:title, title) %>
+<h1><%= title %></h1>
+
+<div class="row" >
+  <div class="col-md-8 col-md-offset-2">
+    <ul class="messages">
+      <%= render @messages %>
+    </ul>
+    
+    <%= form_for @message, url: messages_talk_path(@talk),
+                          html: { class: 'message-form'} do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="field">
+        <%= f.text_area :content, class: "content" %>
+      </div>
+      <%= f.submit "Send", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

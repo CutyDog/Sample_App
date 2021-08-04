@@ -11,7 +11,21 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <h3>Micropost Feed</h3>
-    <%= render 'shared/feed' %>
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a href="#feed-tab" data-toggle="tab">Micropost Feed</a>
+      </li>
+      <li>
+        <a href="#talks-tab" data-toggle="tab">Messages</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="feed-tab">
+        <%= render 'shared/feed' %>
+      </div>
+      <div class="tab-pane" id="talks-tab">
+        <%= render 'shared/talks' %>
+      </div>
+    </div>
   </div>
 </div>

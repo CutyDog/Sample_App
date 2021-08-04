@@ -1,0 +1,6 @@
+<% if @talks %>
+  <ol class="talks">
+    <%= render @talks %>
+  </ol>
+  <%= will_paginate @talks, param_name: :talks_page %>
+<% end %>

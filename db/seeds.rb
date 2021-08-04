@@ -40,3 +40,15 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+#トーク
+members = users[2..30]
+members.each do |member|
+  talk = Talk.create!
+  #メンバーシップ
+  talk.memberships.create!(user: user)
+  talk.memberships.create!(user: member)
+  #メッセージ
+  talk.messages.create!(user: user, content: Faker::Lorem.sentence(5))
+  talk.messages.create!(user: member, content: Faker::Lorem.sentence(5))
+end  
