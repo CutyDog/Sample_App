@@ -7,11 +7,13 @@
         <%= @user.name %>
       </h1>
     </section>
-    <section class="talk" >
-      <%= form_for Talk.new do |f| %>
-        <%= hidden_field_tag :member_id, @user.id %>
-        <%= f.submit "Message", class: "btn btn-primary" %>
-      <% end %>
+    <section class="talk">
+      <% if current_user.already_message?(@user) %>
+        <% talk_id = current_user.already_message?(@user).talk_id %>
+        <%= link_to "Open DM Page", talk_path(talk_id), class: "btn btn-primary" %>
+      <% else %>
+        <%= render 'shared/start_message' %>
+      <% end %>  
     </section>
     <section class="status">
       <%= render 'shared/status' %>

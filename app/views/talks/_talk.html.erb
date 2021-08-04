@@ -1,7 +1,8 @@
 <li id="talk-<%= talk.id %>">
   <% message = talk.latest_message %>
   <% membership = talk.memberships.find_by(user: current_user) %>
-  <%= gravatar_for(message.nil? ? talk.memberships.first.user : message.user, size: 50) %>
+  <% other_member = talk.memberships.where.not(user: current_user) %>
+  <%= gravatar_for(message.nil? ? talk.memberships.last.user : message.user, size: 50) %>
   <%= link_to 'Leave', membership_path(membership),
                        class: 'delete',
                        method: :delete,

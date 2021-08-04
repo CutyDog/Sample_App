@@ -108,6 +108,12 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
   
+  def already_message?(other_user)
+    talk_ids = "SELECT talk_id FROM memberships 
+                WHERE user_id = :user_id"
+    Membership.where("talk_id IN (#{talk_ids})", user_id: id).find_by(user_id: other_user.id)            
+  end  
+  
   private
     # メールアドレスをすべて小文字にする
     def downcase_email
