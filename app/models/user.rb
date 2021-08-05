@@ -112,7 +112,7 @@ class User < ApplicationRecord
     talk_ids = "SELECT talk_id FROM memberships 
                 WHERE user_id = :user_id"
     Membership.where("talk_id IN (#{talk_ids})", user_id: id).find_by(user_id: other_user.id)            
-  end  
+  end
   
   private
     # メールアドレスをすべて小文字にする

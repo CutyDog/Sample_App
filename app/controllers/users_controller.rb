@@ -78,6 +78,11 @@ class UsersController < ApplicationController
     @feed_rss = @user.feed
   end 
   
+  def search
+    @keyword = params[:keyword]
+    @user_names = (@keyword ? User.where('name like ?', "%#{@keyword}%") : User.all)
+  end  
+  
   private  
   
     def user_params
@@ -95,4 +100,8 @@ class UsersController < ApplicationController
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end  
+    
+    def autocomplete_params
+      params.permit(:name)
+    end
 end

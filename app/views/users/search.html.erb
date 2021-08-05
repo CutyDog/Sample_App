@@ -1,0 +1,8 @@
+<div class="row">
+  <h1 class="col-md-12">Search Results</h1>
+  <div class="col-md-12">< Keyword：<%= @keyword.empty? ? "none" : @keyword %> ></div>
+</div>
+
+<ul class="users">
+  <%= render @user_names %>
+</ul>
