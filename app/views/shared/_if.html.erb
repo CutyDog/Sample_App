@@ -6,6 +6,9 @@
     <section class="status">
       <%= render 'shared/status' %>
     </section>
+    <section class="rss">
+      <%= link_to "Open Feed On RSS", rss_feed_user_path(@user), class: "btn btn-success", target: :_blank %>
+    </section>
     <section class="micropost_form">
       <%= render 'shared/micropost_form' %>
     </section>
