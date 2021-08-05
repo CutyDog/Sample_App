@@ -78,9 +78,13 @@ class UsersController < ApplicationController
     @feed_rss = @user.feed
   end 
   
-  def autocomplete_name
-    @keywords = User.by_name_like(autocomplete_params[:name].pluck(:name).reject(&:blank?))
-    render json: @keywords
+  def search
+    @keyword = params[:keyword]
+    @user_names = if @keyword
+                    User.where('name like ?', "%#{@keyword}%")
+                  else
+                    User.all
+                  end
   end  
   
   private  

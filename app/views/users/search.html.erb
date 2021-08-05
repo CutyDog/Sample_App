@@ -1,0 +1,7 @@
+<% @keyword.empty? ? keyword="none" : keyword=@keyword %>
+<h1>Keyword：<%= keyword %></h1>
+
+
+<ul class="users">
+  <%= render @user_names %>
+</ul>

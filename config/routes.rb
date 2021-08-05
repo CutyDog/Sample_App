@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   resources :users do
     get :following, :followers, on: :member
-    get 'autocomplete_name/:name', on: :collection, action: :autocomplete_name
   end  
+  get 'search', to: 'users#search'
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]

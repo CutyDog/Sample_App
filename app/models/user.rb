@@ -11,9 +11,6 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :following, through: :active_relationships,  source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-  scope :by_name_like, lambda { |name|
-    where('name LIKE :value', { value: "#{sanitize_sql_like(name)}%"})
-  }
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest 
@@ -115,7 +112,7 @@ class User < ApplicationRecord
     talk_ids = "SELECT talk_id FROM memberships 
                 WHERE user_id = :user_id"
     Membership.where("talk_id IN (#{talk_ids})", user_id: id).find_by(user_id: other_user.id)            
-  end  
+  end
   
   private
     # メールアドレスをすべて小文字にする
