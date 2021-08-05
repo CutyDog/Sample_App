@@ -12,6 +12,11 @@
     <section class="micropost_form">
       <%= render 'shared/micropost_form' %>
     </section>
+    <section class="search">
+      <%= form_tag(users_path, method: :get, enforce_utf8: false) do %>
+        <%= autocomplete_field_tag 'user[name]', nil,  autocomplete_user_name_users_path %>
+      <% end %>  
+    </section>
   </aside>
   <div class="col-md-8">
     <ul class="nav nav-tabs">

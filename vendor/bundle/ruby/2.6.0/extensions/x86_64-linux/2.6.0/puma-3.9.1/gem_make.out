@@ -1,0 +1,141 @@
+current directory: /home/ec2-user/environment/sample_app/vendor/bundle/ruby/2.6.0/gems/puma-3.9.1/ext/puma_http11
+/home/ec2-user/.rvm/rubies/ruby-2.6.3/bin/ruby -I /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210805-6674-8ffk3o.rb extconf.rb
+checking for BIO_read() in -lcrypto... yes
+checking for SSL_CTX_new() in -lssl... yes
+checking for openssl/bio.h... yes
+creating Makefile
+
+current directory: /home/ec2-user/environment/sample_app/vendor/bundle/ruby/2.6.0/gems/puma-3.9.1/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: /home/ec2-user/environment/sample_app/vendor/bundle/ruby/2.6.0/gems/puma-3.9.1/ext/puma_http11
+make "DESTDIR="
+compiling http11_parser.c
+In file included from ext/puma_http11/http11_parser.rl:8:0:
+ext/puma_http11/http11_parser.rl: In function ‘puma_parser_execute’:
+ext/puma_http11/http11_parser.rl:111:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+ext/puma_http11/http11_parser.rl:37:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:39:1: note: here
+ext/puma_http11/http11_parser.rl:52:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:54:1: note: here
+ext/puma_http11/http11_parser.rl:37:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:39:1: note: here
+ext/puma_http11/http11_parser.rl:55:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:57:1: note: here
+ext/puma_http11/http11_parser.rl:37:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:39:1: note: here
+ext/puma_http11/http11_parser.c:244:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:246:1: note: here
+ext/puma_http11/http11_parser.c:251:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:253:1: note: here
+ext/puma_http11/http11_parser.c:258:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:260:1: note: here
+ext/puma_http11/http11_parser.c:265:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:267:1: note: here
+ext/puma_http11/http11_parser.c:272:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:274:1: note: here
+ext/puma_http11/http11_parser.c:281:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:283:1: note: here
+ext/puma_http11/http11_parser.c:288:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:290:1: note: here
+ext/puma_http11/http11_parser.rl:49:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:51:1: note: here
+ext/puma_http11/http11_parser.c:325:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:327:1: note: here
+ext/puma_http11/http11_parser.c:353:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:355:1: note: here
+ext/puma_http11/http11_parser.rl:41:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:43:1: note: here
+ext/puma_http11/http11_parser.rl:46:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:48:1: note: here
+ext/puma_http11/http11_parser.rl:46:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:48:1: note: here
+ext/puma_http11/http11_parser.rl:55:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:57:1: note: here
+ext/puma_http11/http11_parser.rl:37:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:39:1: note: here
+ext/puma_http11/http11_parser.rl:37:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:39:1: note: here
+ext/puma_http11/http11_parser.rl:37:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:39:1: note: here
+ext/puma_http11/http11_parser.rl:37:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:39:1: note: here
+ext/puma_http11/http11_parser.rl:71:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:73:1: note: here
+ext/puma_http11/http11_parser.rl:71:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:73:1: note: here
+ext/puma_http11/http11_parser.rl:60:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.rl:62:1: note: here
+ext/puma_http11/http11_parser.c:653:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:655:1: note: here
+ext/puma_http11/http11_parser.c:671:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:673:1: note: here
+ext/puma_http11/http11_parser.c:689:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:691:1: note: here
+ext/puma_http11/http11_parser.c:707:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:709:1: note: here
+ext/puma_http11/http11_parser.c:725:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:727:1: note: here
+ext/puma_http11/http11_parser.c:743:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:745:1: note: here
+ext/puma_http11/http11_parser.c:761:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:763:1: note: here
+ext/puma_http11/http11_parser.c:779:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:781:1: note: here
+ext/puma_http11/http11_parser.c:797:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:799:1: note: here
+ext/puma_http11/http11_parser.c:815:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:817:1: note: here
+ext/puma_http11/http11_parser.c:833:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:835:1: note: here
+ext/puma_http11/http11_parser.c:851:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:853:1: note: here
+ext/puma_http11/http11_parser.c:869:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:871:1: note: here
+ext/puma_http11/http11_parser.c:887:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:889:1: note: here
+ext/puma_http11/http11_parser.c:905:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:907:1: note: here
+ext/puma_http11/http11_parser.c:923:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:925:1: note: here
+ext/puma_http11/http11_parser.c:941:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:943:1: note: here
+ext/puma_http11/http11_parser.c:959:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:961:1: note: here
+ext/puma_http11/http11_parser.c:977:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+ext/puma_http11/http11_parser.c:979:1: note: here
+ext/puma_http11/http11_parser.rl: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-cast-function-type’
+compiling io_buffer.c
+compiling mini_ssl.c
+mini_ssl.c: In function ‘engine_init_server’:
+mini_ssl.c:153:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   ID sym_cert = rb_intern("cert");
+   ^~
+mini_ssl.c:158:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   ID sym_ca = rb_intern("ca");
+   ^~
+mini_ssl.c:180:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   DH *dh = get_dh1024();
+   ^~
+mini_ssl.c:184:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   EC_KEY *ecdh = EC_KEY_new_by_curve_name(NID_secp521r1);
+   ^~~~~~
+mini_ssl.c: In function ‘raise_error’:
+mini_ssl.c:241:6: warning: function might be candidate for attribute ‘noreturn’ [-Wsuggest-attribute=noreturn]
+ void raise_error(SSL* ssl, int result) {
+      ^~~~~~~~~~~
+mini_ssl.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-cast-function-type’
+compiling puma_http11.c
+linking shared-object puma/puma_http11.so
+
+current directory: /home/ec2-user/environment/sample_app/vendor/bundle/ruby/2.6.0/gems/puma-3.9.1/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20210805-6674-mqrspp/puma

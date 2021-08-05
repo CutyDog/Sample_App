@@ -12,18 +12,15 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   resources :users do
-    member do
-      get :following, :followers
-    end  
+    get :following, :followers, on: :member
+    get 'autocomplete_name/:name', on: :collection, action: :autocomplete_name
   end  
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
   resources :talks,               only: [:show, :create] do
-    member do
-      post :memberships, :messages
-    end
+    post :memberships, :messages, on: :member
   end 
   resources :memberships,         only: :destroy
   resources :messages,            only: :destroy
