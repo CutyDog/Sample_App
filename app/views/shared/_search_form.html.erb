@@ -1,8 +1,8 @@
 <div class="search-form">
   <%= form_with url: search_path, method: :get, local: true do |f| %>
     <div class="row">
-      <div class="col-md-8"><%= f.text_field :keyword, value: @keyword, placeholder: 'User Name' %></div>
-      <div class="col-md-4"><%= f.submit "Search", class: 'btn btn-success' %></div>
+      <div class="col-md-8"><%= f.text_field :keyword, value: @keyword, placeholder: 'User Name', class: 'form-control' %></div>
+      <div class="col-md-4"><%= f.submit "Search", class: 'btn btn-info' %></div>
     </div>
   <% end %>
 </div>

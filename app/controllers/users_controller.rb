@@ -80,11 +80,7 @@ class UsersController < ApplicationController
   
   def search
     @keyword = params[:keyword]
-    @user_names = if @keyword
-                    User.where('name like ?', "%#{@keyword}%")
-                  else
-                    User.all
-                  end
+    @user_names = (@keyword ? User.where('name like ?', "%#{@keyword}%") : User.all)
   end  
   
   private  
