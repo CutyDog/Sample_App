@@ -27,4 +27,9 @@ Rails.application.routes.draw do
   end 
   resources :memberships,         only: :destroy
   resources :messages,            only: :destroy
+  resources :users, only: [:rss_micropost] do
+    member do
+      get :rss_micropost, defaults: { format: :rss }
+    end  
+  end  
 end
