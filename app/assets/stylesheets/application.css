@@ -13,6 +13,3 @@
  *= require_tree .
  *= require_self
  */
- @import "jquery-ui/autocomplete";
- @import "jquery-ui/theme";
- @import "jquery-ui/menu";
