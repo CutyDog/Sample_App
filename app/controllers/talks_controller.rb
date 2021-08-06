@@ -5,10 +5,13 @@ class TalksController < ApplicationController
   def show
     @messages = @talk.messages
     @message = Message.new
+    respond_to do |format|
+      format.html
+      format.json { render json: @messages }  
+    end  
   end 
   
   def create
-    
     @talk = Talk.new
     @talk.memberships.build(user_id: current_user.id)
     @talk.memberships.build(user_id: params[:member_id])
