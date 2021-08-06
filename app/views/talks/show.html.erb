@@ -1,5 +1,8 @@
 <% title = @talk.title(current_user, 50) %>
 <% provide(:title, title) %>
+<section class="api-tag">
+  <a href="<%= request.url %>.json" class="btn_02">API Rink</a>
+</section>
 <h1><%= title %></h1>
 
 <div class="row" >
