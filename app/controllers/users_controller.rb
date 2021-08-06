@@ -6,12 +6,21 @@ class UsersController < ApplicationController
   
   def index
     @users = User.where(activated: true).paginate(page: params[:page])
+    respond_to do |format|
+      format.html
+      format.json { render json: @users}
+    end  
   end  
   
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts_all = @user.microposts
     #@fake = Faker::Book.title
+    respond_to do |format|
+      format.html
+      format.json { render json: {user: @user, microposts: @microposts_all} }
+    end  
     redirect_to root_url and return unless @user.activated?
   end 
   
@@ -53,14 +62,22 @@ class UsersController < ApplicationController
     @title = "Following"
     @user = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page])
-    render 'show_follow'
+    @users_all = @user.following
+    respond_to do |format|
+      format.html { render 'show_follow' }
+      format.json { render json: @users_all }
+    end  
   end
   
   def followers
     @title = "Followers"
     @user = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
-    render 'show_follow'
+    @users_all = @user.followers
+    respond_to do |format|
+      format.html { render 'show_follow' }
+      format.json { render json: @users_all }  
+    end    
   end  
   
   def rss_micropost 
